@@ -4,7 +4,7 @@
  * render methods on your player and enemy objects (defined in your app.js).
  *
  * A game engine works by drawing the entire game screen over and over, kind of
- * likeletflipbook you may have created as a kid. When your player moves across
+ * likevarflipbook you may have created as a kid. When your player moves across
  * the screen, it may look like just that image/character is moving or being
  * drawn but that is not the case. What's really happening is the entire "scene"
  * is being drawn over and over, presenting the illusion of animation.
@@ -13,20 +13,23 @@
  * writing app.js a little simpler to work with.
  */
 
-let Engine = (function(global) {
+var Engine = (function(global) {
     /* Predefine the variables we'll be using within this scope,
      * create the canvas element, grab the 2D context for that canvas
      * set the canvas elements height/width and add it to the DOM.
      */
-    let doc = global.document,
+    var doc = global.document,
         win = global.window,
-        canvas = doc.createElement('canvas'),
+        // canvas = doc.createElement('canvas'),
+        canvas = doc.querySelector('#canvas'),
         ctx = canvas.getContext('2d'),
         lastTime;
 
     canvas.width = 505;
-    canvas.height = 606;
+    canvas.height = 650;
     doc.body.appendChild(canvas);
+
+
 
     /* This function serves as the kickoff point for the game loop itself
      * and handles properly calling the update and render methods.
@@ -38,7 +41,7 @@ let Engine = (function(global) {
          * would be the same for everyone (regardless of how fast their
          * computer is) - hurray time!
          */
-        let now = Date.now(),
+        var now = Date.now(),
             dt = (now - lastTime) / 1000.0;
 
         /* Call our update/render functions, pass along the time delta to
@@ -106,13 +109,13 @@ let Engine = (function(global) {
         /* This array holds the relative URL to the image used
          * for that particular row of the game level.
          */
-        let rowImages = [
-                'images/water-block.png',   // Top row is water
-                'images/stone-block.png',   // Row 1 of 3 of stone
-                'images/stone-block.png',   // Row 2 of 3 of stone
-                'images/stone-block.png',   // Row 3 of 3 of stone
-                'images/grass-block.png',   // Row 1 of 2 of grass
-                'images/grass-block.png'    // Row 2 of 2 of grass
+        var rowImages = [
+                'images/stone-block.png',   // Top row is stone
+                'images/road-block.png',   // Row 1 of 3 of road
+                'images/road-block.png',   // Row 2 of 3 of road
+                'images/road-block.png',   // Row 3 of 3 of road
+                'images/stone-block.png',   // Row 1 of 2 of stone
+                'images/sand-block.png'    // Row 2 of 2 of water-sand
             ],
             numRows = 6,
             numCols = 5,
@@ -137,6 +140,27 @@ let Engine = (function(global) {
                 ctx.drawImage(Resources.get(rowImages[row]), col * 101, row * 83);
             }
         }
+
+        class CanvasText {
+            constructor(x, y, color, size, message) {
+                this.x = x;
+                this.y = y;
+                this.color = color;
+                this.size = size;
+                this.message = `${message}`;
+
+            }
+
+            draw() {
+
+                ctx.font = this.size;
+                ctx.fillStyle = this.color;
+                ctx.fillText(this.message, this.x, this.y);
+            }
+        }
+
+        var developer = new CanvasText(20, 630, 'antiquewhite', '18px Calibri', '2018 © Developed by Elena Novikova for Udacity / Google FEND');
+        developer.draw();
 
         renderEntities();
     }
@@ -170,9 +194,9 @@ let Engine = (function(global) {
      */
     Resources.load([
         'images/stone-block.png',
-        'images/water-block.png',
-        'images/grass-block.png',
-        'images/enemy-bug.png',
+        'images/road-block.png',
+        'images/sand-block.png',
+        'images/enemy-car.png',
         'images/char-boy.png'
     ]);
     Resources.onReady(init);
