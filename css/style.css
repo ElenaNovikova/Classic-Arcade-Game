@@ -2,6 +2,7 @@ body {
     text-align: center;
     /* background: #ffffff url('../images/stage-spotlight-mobile_iphone.png'); */
     background: #ffffff url('../images/spot.jpg');
+    font-family: 'Calibri', sans-serif;
 }
 
 .container {
@@ -18,10 +19,24 @@ h1 {
   font-weight: normal;
   color: #ffb300;
   margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+#score_panel {
+    padding-left: 0px;
 }
 
 #score_panel li {
     list-style: none;
     display: inline-block;
     margin: 20px 10px;
+    color: antiquewhite;
+    font-size: 28px;
+}
+
+.restart_btn {
+    font-size: 22px;
+    font-family: 'Calibri', sans-serif;
+    width: 94px;
+    cursor: pointer;
 }
