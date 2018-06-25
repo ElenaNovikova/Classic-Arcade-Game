@@ -4,10 +4,8 @@ const scorePanel = document.getElementById('score_panel');
 
 const Game = function() {
     this.width = 500;
-    this.colWidth = 50;
-    this.colHeight = 50;
-    this.playerStartX = 358;
-    this.playerStartY = 300;
+    this.playerStartX = 203;
+    this.playerStartY = 295;
 };
 
 const game = new Game();
@@ -18,7 +16,7 @@ var Enemy = function(x, y, speed) {
     // we've provided one for you to get started
     this.x = x;
     this.y = y;
-    this.speed = Math.floor(Math.random() * 197);
+    this.speed = Math.floor(Math.random() * 280) + 40;
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-car.png';
