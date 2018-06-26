@@ -3,7 +3,7 @@ var score = 0;
 const scorePanel = document.getElementById('score_panel');
 
 const Game = function() {
-    //this.width = 500;
+    //this.width = 505;
     this.playerStartX = 203;
     this.playerStartY = 295;
 };
@@ -28,7 +28,11 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-    this.x += this.speed * dt;
+    if (this.x <= 505) {
+        this.x += this.speed * dt;
+    } else {
+        this.x = -50; // reseting the position of the enemy, when it goes off the canvas
+    }
 };
 
 // Draw the enemy on the screen, required method for game
