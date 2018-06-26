@@ -3,7 +3,7 @@ var score = 0;
 const scorePanel = document.getElementById('score_panel');
 
 const Game = function() {
-    this.width = 500;
+    //this.width = 500;
     this.playerStartX = 203;
     this.playerStartY = 295;
 };
@@ -52,6 +52,19 @@ const Player = function() {
 
 const player = new Player();
 
+Player.prototype.handleInput = function(keyPress) {
+
+    if (keyPress == "left" && this.x > 0) {
+        this.x -= 100;
+    } else if (keyPress == "right" && this.x < 400) {
+        this.x += 100;
+    } else if (keyPress == "up" && this.y > 0) {
+        this.y -= 80;
+    } else if (keyPress == "down" && this.y < 300) {
+        this.y += 80;
+    }
+};
+
 // Render player method
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
@@ -59,6 +72,18 @@ Player.prototype.render = function() {
 
 Player.prototype.update = function() {
     //this.checkMoves();
+    // Prevent player from moving beyond canvas
+    if (this.y > 320) {
+        this.y = 320;
+    }
+
+    if (this.x > 400) {
+        this.x = 400;
+    }
+
+    if (this.x < 0) {
+        this.x = 0;
+    }
 };
 
 // Now instantiate your objects.
