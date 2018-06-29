@@ -1,4 +1,4 @@
-// Counter for game score
+/**/// Counter for game score
 var score = 0;
 const scorePanel = document.getElementById('score_panel');
 
@@ -112,4 +112,10 @@ document.addEventListener('keyup', function(e) {
     };
 
     player.handleInput(allowedKeys[e.keyCode]);
+});
+
+// Restarting the game after click on the Restart button
+var restartGameBtn = document.getElementById('restart_btn');
+restartGameBtn.addEventListener('click', function() {
+    location.reload(true);
 });
