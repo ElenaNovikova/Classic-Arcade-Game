@@ -32,7 +32,13 @@ Enemy.prototype.update = function(dt) {
         this.x += this.speed * dt;
     } else {
         this.x = -50; // reseting the position of the enemy, when it goes off the canvas
-    }
+    };
+    // Collision detection between the player and the enemies
+    if (player.x < this.x + 75 && player.x + 75 > this.x &&
+        player.y < this.y + 55 && 55 + player.y > this.y) {
+        player.x = 203;
+        player.y = 295;
+    };
 };
 
 // Draw the enemy on the screen, required method for game
