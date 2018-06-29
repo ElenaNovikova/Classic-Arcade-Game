@@ -16,9 +16,9 @@ please visit: https://elenanovikova.github.io/Classic-Arcade-Game/
 1. Move the Player with the arrow keys on your keyboard.
 2. One click is a one step.
 3. The goal is to cross the road and reach the other sidewalk, escaping the cars.
-4. For every successful crossing of the road you get 50 points.
+4. You will win the Game after successful crossing of the road.
 5. For each collision with a car you lose a star.
-6. The Game is ended up after the loss of all three stars.
+6. The Game is ended up after the loss of all five stars.
 7. To play again click on the Restart button.
 
 ## Acknowledgments
