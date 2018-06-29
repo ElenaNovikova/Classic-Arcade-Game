@@ -22,6 +22,14 @@ var Enemy = function(x, y, speed) {
     this.sprite = 'images/enemy-car.png';
 };
 
+function shakingC() {
+    canvas.classList.add('collisionShake');
+    setTimeout(function() {
+        //console.log('You lost!')
+        canvas.classList.toggle('collisionShake');
+    }, 1000);
+}
+
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
@@ -38,6 +46,7 @@ Enemy.prototype.update = function(dt) {
         player.y < this.y + 55 && 55 + player.y > this.y) {
         player.x = 203;
         player.y = 295;
+        shakingC();
     };
 };
 
