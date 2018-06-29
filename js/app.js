@@ -78,7 +78,7 @@ Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-Player.prototype.update = function() {  
+Player.prototype.update = function() {
     // Prevent player from moving beyond canvas
     if (this.y > 320) {
         this.y = 320;
@@ -102,7 +102,31 @@ const allEnemies = [
   new Enemy(105,145),
   new Enemy(200,60)
 ];
-//var player;
+
+//Player wins the game when reaches the opposite sidewalk
+// Modale window with congrats appears
+function playerWins() {
+    // something happens when player wins
+}
+
+//Setting up the Modal popup window:
+// Get the modal:
+let modal = document.getElementById('myModal');
+
+// Get the <span> element that closes the modal:
+let span = document.getElementsByClassName('close')[0];
+
+// When the user clicks on <span> (x), close the modal:
+span.onclick = function() {
+    modal.style.display = 'none';
+}
+
+// When the user clicks anywhere outside of the modal, close it:
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
