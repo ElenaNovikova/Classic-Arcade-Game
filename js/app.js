@@ -1,4 +1,4 @@
-/**/// Counter for game score
+// Counter for game score
 var score = 0;
 const scorePanel = document.getElementById('score_panel');
 
@@ -55,7 +55,6 @@ const Player = function() {
     this.y = game.playerStartY;
     this.move = [0, 0];
     this.live = 3;
-    //this.collectedGems = 0;
     this.end = false;
     this.sprite = 'images/char-horn-girl.png';
 };
@@ -63,7 +62,6 @@ const Player = function() {
 const player = new Player();
 
 Player.prototype.handleInput = function(keyPress) {
-
     if (keyPress == "left" && this.x > 0) {
         this.x -= 100;
     } else if (keyPress == "right" && this.x < 400) {
@@ -80,8 +78,7 @@ Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-Player.prototype.update = function() {
-    //this.checkMoves();
+Player.prototype.update = function() {  
     // Prevent player from moving beyond canvas
     if (this.y > 320) {
         this.y = 320;
