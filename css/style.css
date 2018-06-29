@@ -40,3 +40,75 @@ h1 {
     width: 94px;
     cursor: pointer;
 }
+
+/*
+ * The Modal popup window
+ */
+
+/*** Modal background ***/
+.modal {
+    display: none; /* Not visible by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    padding-top: 15%; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black with opacity */
+}
+
+/*** Modal Content ***/
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    max-width: 60%;
+    width: 300px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/*** Modal Close Button ***/
+.close {
+    color: #811501;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #aaa;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-text {
+    font: bold 20px sans-serif;
+    background: none;
+    color: #708090;
+    text-shadow: none;
+}
+
+#final-score {
+    color: #708090;
+    width: 100%;
+}
+
+#restart1 {
+    position: relative;
+    background-color: #811501;
+    border: none;
+    box-shadow: 8px 12px 10px 0 rgba(10, 6, 40, 0.7);
+    color: white;
+    padding: 10px 20px;
+    margin-top: 15px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
