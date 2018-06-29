@@ -12,26 +12,41 @@ body {
     flex-direction: column;
 }
 
+#canvas {
+    margin-top: 0px;
+}
+
 h1 {
     /* font-family: 'Aclonica', sans-serif; */
     font-family: 'Raleway Dots', sans-serif;;
-    font-size: 60px;
+    font-size: 54px;
     font-weight: normal;
     color: #ffb300;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     margin-top: 20px;
 }
 
 #score_panel {
     padding-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 #score_panel li {
     list-style: none;
     display: inline-block;
-    margin: 20px 10px;
+    margin-top: 15px;
+    margin-bottom: 5px;
     color: antiquewhite;
-    font-size: 28px;
+    font-size: 24px;
+}
+
+#score {
+    padding-right: 14px;
+}
+
+#lives {
+    padding-right: 30px;
 }
 
 #restart_btn {
@@ -39,6 +54,10 @@ h1 {
     font-family: 'Calibri', sans-serif;
     width: 94px;
     cursor: pointer;
+}
+
+#but-restart {
+    padding-left: 106px;
 }
 
 /*
