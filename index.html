@@ -7,17 +7,24 @@
     <meta name="author" content="Elena Novikova">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Aclonica" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway+Dots&effect=fire-animation" rel="stylesheet">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Raleway+Dots&effect=neon" rel="stylesheet"> -->
+    <!--<link href="https://fonts.googleapis.com/css?family=Raleway+Dots&effect=fire-animation" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway+Dots&effect=neon" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1 class="font-effect-fire-animation">Arcade Game Clone</h1>
-        <!-- <h1 class="font-effect-neon">Arcade Game Clone</h1> -->
+        <!--<h1 class="font-effect-fire-animation">Arcade Game Clone</h1>-->
+        <h1 class="font-effect-neon">Arcade Game Clone</h1>
         <ul id="score_panel">
-        <li id="score">Score: 0</li>
-        <li><button id="restart_btn">Restart</button></li>
+            <li id="lives">Lives: </li>
+            <li id="score"><i class="fas fa-heartbeat"></i></li>
+            <li id="score"><i class="fas fa-heartbeat"></i></li>
+            <li id="score"><i class="fas fa-heartbeat"></i></li>
+            <li id="score"><i class="fas fa-heartbeat"></i></li>
+            <li id="score"><i class="fas fa-heart" style="color: black"></i></li>
+            <li id="but-restart"><button id="restart_btn">Restart</button></li>
         </ul>
     </header>
     <canvas id="canvas"></canvas>
