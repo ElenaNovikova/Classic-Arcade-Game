@@ -34,7 +34,7 @@ h1 {
     font-size: 28px;
 }
 
-.restart_btn {
+#restart_btn {
     font-size: 22px;
     font-family: 'Calibri', sans-serif;
     width: 94px;
