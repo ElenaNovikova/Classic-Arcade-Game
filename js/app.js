@@ -1,4 +1,4 @@
-// Counter for game score
+// Counter for game lives
 var score = 0;
 const scorePanel = document.getElementById('score_panel');
 
@@ -26,8 +26,10 @@ function shakingC() {
     canvas.classList.add('collisionShake');
     setTimeout(function() {
         //console.log('You lost!')
-        canvas.classList.toggle('collisionShake');
+        canvas.classList.remove('collisionShake');
     }, 1000);
+    //return;
+    //window.clearInterval();
 }
 
 // Update the enemy's position, required method for game
@@ -151,7 +153,8 @@ document.addEventListener('keyup', function(e) {
 });
 
 // Restarting the game after click on the Restart button
-var restartGameBtn = document.getElementById('restart_btn');
+let restartGameBtn = document.getElementById('restart_btn');
 restartGameBtn.addEventListener('click', function() {
     location.reload(true);
+    //document.location.href = '';
 });
