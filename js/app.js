@@ -1,11 +1,9 @@
 // TODO: implement collection of gems, allowing the player to collect them during the crossing the road
 
-// Counter for game lives
+// Counter for collisions and game lives
 var counterCollisions = 0;
-var score = document.querySelectorAll('#score');
 
 const Game = function() {
-    //this.width = 505;
     this.playerStartX = 203;
     this.playerStartY = 295;
 };
@@ -18,7 +16,7 @@ var Enemy = function(x, y, speed) {
     // we've provided one for you to get started
     this.x = x;
     this.y = y;
-    this.speed = Math.floor(Math.random() * 580) + 300;
+    this.speed = Math.floor(Math.random() * 580) + 30;
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-car.png';
@@ -30,13 +28,18 @@ function shakingC() {
         //console.log('You lost!')
         canvas.classList.remove('collisionShake');
     }, 900);
-    //return;
-    //window.clearInterval();
     counterCollisions++;
     console.log(counterCollisions);
-    score.forEach(function(fas) {
-		    fas.innerHTML = '<i class="fas fa-heart" style="color: black"></i>';
-	  });
+    // Take away one heart after every collision
+    for (var i = 5; i >= 1; i--) {
+        var hearts = document.getElementById('score' + i);
+        if (hearts.innerHTML.indexOf("color: black") != -1) {
+          continue;
+        }
+        hearts.innerHTML = '<i class="fas fa-heart" style="color: black"></i>';
+        break;
+    }
+
     if (counterCollisions == 5) {
         gameOver();
     }
@@ -135,6 +138,13 @@ function playerWins() {
     document.removeEventListener('keyup', keyupELis);
     // You won! Modal window appears
     modal.style.display = "block";
+    if (counterCollisions == 1) {
+        var liveS = 'life';
+    } else {
+        var liveS = 'lives';
+    }
+    var yourScore = document.getElementById('final-score');
+    yourScore.innerHTML = `<tr><th>You wasted ${counterCollisions} ${liveS}</th></tr>`;
 }
 
 function gameOver() {
@@ -200,9 +210,4 @@ function keyupELis(e) {
 let restartGameBtn = document.getElementById('restart_btn');
 restartGameBtn.addEventListener('click', function() {
     location.reload(true);
-    //document.location.href = '';
 });
-
-/*document.addEventListener('keydown', function(e) {
-    e.preventDefault();
-});*/
