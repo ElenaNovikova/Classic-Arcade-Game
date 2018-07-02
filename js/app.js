@@ -143,7 +143,7 @@ function playerWins() {
     } else {
         var liveS = 'lives';
     }
-    var yourScore = document.getElementById('final-score');
+    var yourScore = document.querySelector('.final-score');
     yourScore.innerHTML = `<tr><th>You wasted ${counterCollisions} ${liveS}</th></tr>`;
 }
 
@@ -172,19 +172,19 @@ let span2 = document.getElementsByClassName('close')[1];
 // When the user clicks on <span> (x), close 1st modal
 span.onclick = function() {
     modal.style.display = 'none';
-}
+};
 
 // When the user clicks on <span> (x), close 2nd modal
 span2.onclick = function() {
     modalNumTwo.style.display = 'none';
-}
+};
 
 // When the user clicks anywhere outside of 1st modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = 'none';
     }
-}
+};
 
 // When the user clicks anywhere outside of 2nd modal, close it
 window.addEventListener("click", function(event) {
