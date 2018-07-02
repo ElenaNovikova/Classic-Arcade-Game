@@ -113,12 +113,12 @@ h1 {
     text-shadow: none;
 }
 
-#final-score {
+#final-score, .final-score {
     color: #708090;
     width: 100%;
 }
 
-#restart1 {
+#restart1, .restart1 {
     position: relative;
     background-color: #811501;
     border: none;
@@ -136,7 +136,6 @@ h1 {
  * Shake effect after collision
  */
 
-/*.face:hover {*/
 .collisionShake {
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
     transform: translate3d(0, 0, 0);
